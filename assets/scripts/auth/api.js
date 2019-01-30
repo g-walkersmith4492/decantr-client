@@ -45,6 +45,7 @@ const createWine = function (formData) {
     data: formData,
     headers: {
       Authorization: 'Token token=' + store.user.token
+
     }
   })
 }

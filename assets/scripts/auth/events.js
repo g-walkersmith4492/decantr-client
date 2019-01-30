@@ -1,6 +1,7 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const ui = require('./ui.js')
 const api = require('./api.js')
+const store = require('../store.js')
 
 const onSignUp = function (event) {
   console.log('Nice click!')
