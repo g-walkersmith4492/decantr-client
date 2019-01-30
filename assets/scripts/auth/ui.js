@@ -1,5 +1,7 @@
 const store = require('../store.js')
 
+let changeThisWine = null
+
 const onSignUpSuccess = function () {
   console.log('You have signed up!')
 }
@@ -24,8 +26,20 @@ const onSignOutSuccess = () => {
 }
 
 const onCreateWineSuccess = function (responseData) {
+  store.wine = responseData.wine
+  console.log(store.wine)
+  console.log(store.wine.id)
   console.log('You have created a wine!!')
   console.log(responseData)
+}
+
+const onGetWinesSuccess = function (responseData) {
+  console.log(responseData)
+}
+
+const onGetWineSuccess = function (responseData) {
+  console.log(responseData)
+  changeThisWine = responseData.id
 }
 
 module.exports = {
@@ -34,5 +48,8 @@ module.exports = {
   onSignInSuccess,
   onChangePasswordSuccess,
   onSignOutSuccess,
-  onCreateWineSuccess
+  onCreateWineSuccess,
+  onGetWinesSuccess,
+  onGetWineSuccess,
+  changeThisWine
 }

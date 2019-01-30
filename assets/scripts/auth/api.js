@@ -1,5 +1,6 @@
 const config = require('../config')
 const store = require('../store')
+const ui = require('./ui')
 
 const signUp = function (formData) {
   return $.ajax({
@@ -50,10 +51,44 @@ const createWine = function (formData) {
   })
 }
 
+const getWines = () => {
+  return $.ajax({
+    url: config.apiUrl + '/wines',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const getWine = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/wines/' + formData.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const changeWine = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/wines/' + ui.changeThisWine,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
 module.exports = {
-  signUp: signUp,
-  signIn: signIn,
-  changePassword: changePassword,
-  signOut: signOut,
-  createWine: createWine
+  signUp,
+  signIn,
+  changePassword,
+  signOut,
+  createWine,
+  getWines,
+  getWine,
+  changeWine
 }

@@ -1,7 +1,6 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const ui = require('./ui.js')
 const api = require('./api.js')
-const store = require('../store.js')
 
 const onSignUp = function (event) {
   console.log('Nice click!')
@@ -50,12 +49,41 @@ const onCreateWine = function (event) {
     .catch(ui.failure)
 }
 
+const onGetWines = (event) => {
+  event.preventDefault()
+  api.getWines()
+    .then(ui.onGetWinesSuccess)
+    .catch(ui.failure)
+}
+
+const onGetWine = (event) => {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+  console.log(formData)
+  api.getWine(formData)
+    .then(ui.onGetWineSuccess)
+    .catch(ui.failure)
+}
+
+const onChangeWine = function (event) {
+  event.preventDefault()
+  console.log('Nice Click!')
+  const formData = getFormFields(event.target)
+  console.log(formData)
+  api.createWine(formData)
+    .then(ui.onCreateWineSuccess)
+    .catch(ui.failure)
+}
+
 const addHandlers = () => {
   $('#signupform').on('submit', onSignUp)
   $('#signinform').on('submit', onSignIn)
   $('#changepasswordform').on('submit', onChangePassword)
   $('.signoutbutton').on('click', onSignOut)
   $('#createwineform').on('submit', onCreateWine)
+  $('#getwinesbutton').on('click', onGetWines)
+  $('#getwineform').on('submit', onGetWine)
+  $('#changewineform').on('submit', onChangeWine)
 }
 
 module.exports = {
