@@ -59,7 +59,7 @@ const onGetWines = (event) => {
 const onGetWine = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  console.log(formData)
+  // console.log(formData)
   api.getWine(formData)
     .then(ui.onGetWineSuccess)
     .catch(ui.failure)
@@ -70,8 +70,15 @@ const onChangeWine = function (event) {
   console.log('Nice Click!')
   const formData = getFormFields(event.target)
   console.log(formData)
-  api.createWine(formData)
-    .then(ui.onCreateWineSuccess)
+  api.changeWine(formData)
+    .then(ui.onChangeWineSuccess)
+    .catch(ui.failure)
+}
+
+const onDeleteWine = (event) => {
+  event.preventDefault()
+  api.deleteWine()
+    .then(ui.onDeleteWineSuccess)
     .catch(ui.failure)
 }
 
@@ -84,6 +91,7 @@ const addHandlers = () => {
   $('#getwinesbutton').on('click', onGetWines)
   $('#getwineform').on('submit', onGetWine)
   $('#changewineform').on('submit', onChangeWine)
+  $('#deletewinebutton').on('click', onDeleteWine)
 }
 
 module.exports = {

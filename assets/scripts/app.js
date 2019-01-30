@@ -1,5 +1,5 @@
 'use strict'
-const bookEvents = require('./auth/events.js')
+const userEvents = require('./auth/events.js')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -7,5 +7,5 @@ const bookEvents = require('./auth/events.js')
 // require('./example')
 
 $(() => {
-  bookEvents.addHandlers()
+  userEvents.addHandlers()
 })

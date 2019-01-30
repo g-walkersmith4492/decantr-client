@@ -12,7 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>BLANK TEXT AREA</h1>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -255,89 +255,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="submit" id="getwinebutton" class="btn btn-primary">Save changes</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeWineModalCenter">
-            Change Wine
-          </button>
 
-          <!-- Modal -->
-          <div class="modal fade" id="changeWineModalCenter" tabindex="-1" role="dialog" aria-labelledby="changeWineModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="createWineModalCenterTitle">Modal title</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form id="changeWineform">
-                <!-- Row for name -->
-              <div class="form-group row">
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" name ="wine[name]" id="changeWineName" placeholder="name">
-                </div>
-              </div>
-              <!-- Row for varietal -->
-              <div class="form-group row">
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="wine[varietal]" id="changeWineVarietal" placeholder="varietal">
-                </div>
-              </div>
-              <!-- Row for country -->
-              <div class="form-group row">
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="wine[country]" id="changeWineCountry" placeholder="country">
-                </div>
-              </div>
-              <!-- Row for region -->
-              <div class="form-group row">
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="wine[region]" id="changeWineRegion" placeholder="region">
-                </div>
-              </div>
-              <!-- Row for vintage -->
-              <div class="form-group row">
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="wine[vintage]" id="changeWineVintage" placeholder="vintage">
-                </div>
-              </div>
-              <!-- Row for date -->
-              <div class="form-group row">
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="wine[date]" id="changeWineDate" placeholder="date">
-                </div>
-              </div>
-              <!-- Row for abv -->
-              <div class="form-group row">
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="wine[abv]" id="changeWineABV" placeholder="abv">
-                </div>
-              </div>
-              <!-- Row for rating -->
-              <div class="form-group row">
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="wine[rating]" id="changeWineRating" placeholder="rating">
-                </div>
-              </div>
-              <!-- Row for notes -->
-              <div class="form-group row">
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="wine[notes]" id="changeWineNotes" placeholder="notes">
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-sm-10">
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" id="changewinebutton" class="btn btn-primary">Save changes</button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          </div>
-          </div>
-          </div>
         </div>
       </div>
     </div>
@@ -346,5 +264,90 @@
 </div>
 </div>
 </div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeWineModalCenter">
+  Create Wine
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="changeWineModalCenter" tabindex="-1" role="dialog" aria-labelledby="changeWineModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="changeWineModalCenterTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="changewineform">
+      <!-- Row for name -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name ="wine[name]" id="changeName" placeholder="name">
+      </div>
+    </div>
+    <!-- Row for varietal -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[varietal]" id="changeVarietal" placeholder="varietal">
+      </div>
+    </div>
+    <!-- Row for country -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[country]" id="changeCountry" placeholder="country">
+      </div>
+    </div>
+    <!-- Row for region -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[region]" id="changeRegion" placeholder="region">
+      </div>
+    </div>
+    <!-- Row for vintage -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[vintage]" id="changeVintage" placeholder="vintage">
+      </div>
+    </div>
+    <!-- Row for date -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[date]" id="changeDate" placeholder="date">
+      </div>
+    </div>
+    <!-- Row for abv -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[abv]" id="changeABV" placeholder="abv">
+      </div>
+    </div>
+    <!-- Row for rating -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[rating]" id="changeRating" placeholder="rating">
+      </div>
+    </div>
+    <!-- Row for notes -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[notes]" id="changeNotes" placeholder="notes">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" id="changewinebutton" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+<button id="deletewinebutton">Delete this entry!</button>
 </body>
 </html>

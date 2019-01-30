@@ -1,23 +1,21 @@
 const store = require('../store.js')
 
-let changeThisWine = null
-
 const onSignUpSuccess = function () {
-  console.log('You have signed up!')
+  $('h1').text('You have successfully signed up!')
 }
 
 const failure = function () {
-  console.log('You have failed!')
+  $('h1').text('You have failed!')
 }
 
 const onSignInSuccess = function (responseData) {
-  console.log('You have signed in!')
   store.user = responseData.user
+  $('h1').text(`Welcome ${responseData.user.email}!`)
   console.log(store.user)
 }
 
 const onChangePasswordSuccess = function (responseData) {
-  console.log('You have changes password!')
+  $('h1').text('You have successfully changed your password!')
 }
 
 const onSignOutSuccess = () => {
@@ -27,19 +25,30 @@ const onSignOutSuccess = () => {
 
 const onCreateWineSuccess = function (responseData) {
   store.wine = responseData.wine
+  const listOfWines = JSON.stringify(store.wine)
   console.log(store.wine)
   console.log(store.wine.id)
-  console.log('You have created a wine!!')
-  console.log(responseData)
+  $('h1').text(listOfWines)
 }
 
 const onGetWinesSuccess = function (responseData) {
-  console.log(responseData)
+  const listOfWines = JSON.stringify(responseData)
+  $('h1').text(listOfWines)
 }
 
 const onGetWineSuccess = function (responseData) {
   console.log(responseData)
-  changeThisWine = responseData.id
+  store.wineId = responseData.wine.id
+  $('h1').text(`You have selected wine number ${responseData.wine.id}`)
+}
+
+const onChangeWineSuccess = function (responseData) {
+  const listOfWines = JSON.stringify(responseData)
+  $('h1').text(listOfWines)
+}
+
+const onDeleteWineSuccess = function (responseData) {
+  $('h1').text('You have deleted this entry!')
 }
 
 module.exports = {
@@ -51,5 +60,6 @@ module.exports = {
   onCreateWineSuccess,
   onGetWinesSuccess,
   onGetWineSuccess,
-  changeThisWine
+  onChangeWineSuccess,
+  onDeleteWineSuccess
 }
