@@ -91,6 +91,16 @@ const deleteWine = () => {
   })
 }
 
+const getFavoriteWine = () => {
+  return $.ajax({
+    url: config.apiUrl + '/wines',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -100,5 +110,6 @@ module.exports = {
   getWines,
   getWine,
   changeWine,
-  deleteWine
+  deleteWine,
+  getFavoriteWine
 }

@@ -51,6 +51,22 @@ const onDeleteWineSuccess = function (responseData) {
   $('h1').text('You have deleted this entry!')
 }
 
+const onFavoriteWineSuccess = function (responseData) {
+  const favoriteWine = responseData.wines
+
+  const result = favoriteWine.reduce(function (previousnum, currentnum) {
+    let largestNumber = 0
+
+    if (currentnum.rating > previousnum.rating) {
+      largestNumber = currentnum
+      return largestNumber
+    } else {
+      largestNumber = previousnum
+      return largestNumber
+    }
+  })
+  $('h1').text(`Your favorite wine is ${result.name}`)
+}
 module.exports = {
   onSignUpSuccess,
   failure,
@@ -61,5 +77,6 @@ module.exports = {
   onGetWinesSuccess,
   onGetWineSuccess,
   onChangeWineSuccess,
-  onDeleteWineSuccess
+  onDeleteWineSuccess,
+  onFavoriteWineSuccess
 }

@@ -82,6 +82,13 @@ const onDeleteWine = (event) => {
     .catch(ui.failure)
 }
 
+const onFavoriteWine = (event) => {
+  event.preventDefault()
+  api.getWines()
+    .then(ui.onFavoriteWineSuccess)
+    .catch(ui.failure)
+}
+
 const addHandlers = () => {
   $('#signupform').on('submit', onSignUp)
   $('#signinform').on('submit', onSignIn)
@@ -92,6 +99,7 @@ const addHandlers = () => {
   $('#getwineform').on('submit', onGetWine)
   $('#changewineform').on('submit', onChangeWine)
   $('#deletewinebutton').on('click', onDeleteWine)
+  $('#favoritewinebutton').on('click', onFavoriteWine)
 }
 
 module.exports = {
