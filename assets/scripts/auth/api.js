@@ -60,9 +60,9 @@ const getWines = () => {
   })
 }
 
-const getWine = (formData) => {
+const getWine = (dataid) => {
   return $.ajax({
-    url: config.apiUrl + '/wines/' + formData.id,
+    url: config.apiUrl + '/wines/' + dataid,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token

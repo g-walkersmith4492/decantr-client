@@ -58,19 +58,22 @@ const onGetWines = (event) => {
 
 const onGetWine = (event) => {
   event.preventDefault()
-  const formData = getFormFields(event.target)
+  const dataid = getFormFields(event.target.dataid)
+  console.log(dataid)
   // console.log(formData)
-  api.getWine(formData)
-    .then(ui.onGetWinesSuccess)
+  api.getWine(dataid)
+    .then(ui.onGetWineSuccess)
     .catch(ui.failure)
 }
 
 const onChangeWine = function (event) {
   event.preventDefault()
   console.log('Nice Click!')
+  const dataid = $(event.target).closest('section').data('id')
   const formData = getFormFields(event.target)
   console.log(formData)
-  api.changeWine(formData)
+  console.log(dataid)
+  api.changeWine(dataid, formData)
     .then(ui.onChangeWineSuccess)
     .catch(ui.failure)
 }
@@ -98,7 +101,7 @@ const addHandlers = () => {
   $('#createwineform').on('submit', onCreateWine)
   $('#getwinesbutton').on('click', onGetWines)
   $('#getwineform').on('submit', onGetWine)
-  $('#changewineform').on('submit', onChangeWine)
+  $('body').on('submit', '#changewineform1', onChangeWine)
   $('#deletewinebutton').on('click', onDeleteWine)
   $('#favoritewinebutton').on('click', onFavoriteWine)
   $('body').on('click', '.delete-button', onDeleteWine)

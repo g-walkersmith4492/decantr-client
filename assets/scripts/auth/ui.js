@@ -38,9 +38,7 @@ const onGetWinesSuccess = function (responseData) {
 }
 
 const onGetWineSuccess = function (responseData) {
-  console.log(responseData)
-  store.wineId = responseData.wine.id
-  $('h1').text(`You have selected wine number ${responseData.wine.id}`)
+  $('content').text(${wine.name})
 }
 
 const onChangeWineSuccess = function (responseData) {
@@ -66,7 +64,7 @@ const onFavoriteWineSuccess = function (responseData) {
       return largestNumber
     }
   })
-  $('h1').text(`Your favorite wine is ${result.name}`)
+  $('content').text(`Your favorite wine is ${result.name}`)
 }
 module.exports = {
   onSignUpSuccess,
