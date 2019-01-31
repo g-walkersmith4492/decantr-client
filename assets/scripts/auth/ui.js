@@ -1,13 +1,24 @@
 const store = require('../store.js')
 const showWinesTemplate = require('../templates/wine-listing.handlebars')
 
+
+$('.button-secret').hide()
+
+
+const showSecretStuff = function () {
+  $('button-secret').show()
+}
+
+const showAuthStuff = function () {
+  $('.button-auth').show()
+}
 const onSignUpSuccess = function () {
   $('#user-message').text('You have successfully signed up!')
   $('#signupform').trigger('reset')
 }
 
 const onSignUpFailure = function () {
-  $('#user-message').text('You have failed!')
+  $('#user-message').text('You have failed to sign up!')
   $('#signupform').trigger('reset')
 }
 
@@ -16,10 +27,12 @@ const onSignInSuccess = function (responseData) {
   $('#user-message').text(`Welcome ${responseData.user.email}!`)
   console.log(store.user)
   $('#signinform').trigger('reset')
+  $('.button-secret').show()
+  $('.button-auth').hide()
 }
 
 const onSignInFailure = function () {
-  $('#user-message').text('You have failed!')
+  $('#user-message').text('You have failed to sign in!')
   $('#signinform').trigger('reset')
 }
 
@@ -29,17 +42,20 @@ const onChangePasswordSuccess = function (responseData) {
 }
 
 const onChangePasswordFailure = function () {
-  $('#user-message').text('You have failed!')
+  $('#user-message').text('You have failed to change your password!')
   $('#changepasswordform').trigger('reset')
 }
 
 const onSignOutSuccess = () => {
   store.user = null
   $('#user-message').text('You have signed out!')
+  $('.button-secret').hide()
+  showAuthStuff()
+  $('.button-auth').show()
 }
 
 const onSignOutFailure = function () {
-  $('#user-message').text('You have failed!')
+  $('#user-message').text('You have failed to sign out!')
 }
 
 const onCreateWineSuccess = function (responseData) {
@@ -50,7 +66,7 @@ const onCreateWineSuccess = function (responseData) {
 }
 
 const onCreateWineFailure = function () {
-  $('#user-message').text('You have failed!')
+  $('#user-message').text('You have failed to create a tasting!')
   $('#signupform').trigger('')
   $('#createwineform').trigger('reset')
 }
@@ -62,7 +78,7 @@ const onGetWinesSuccess = function (responseData) {
 }
 
 const onGetWinesFailure = function () {
-  $('#user-message').text('You have failed!')
+  $('#user-message').text('You have failed to get your tastings!')
 }
 
 const onGetWineSuccess = function (responseData) {
@@ -71,27 +87,27 @@ const onGetWineSuccess = function (responseData) {
   $('#getwineform').trigger('reset')
 }
 const onGetWineFailure = function () {
-  $('#user-message').text('You have failed!')
+  $('#user-message').text('You have failed to get your tasting!')
   $('#getwineform').trigger('reset')
 }
 
 const onChangeWineSuccess = function (responseData) {
   $(`.modal-backdrop`).remove()
-  $('#user-message').html('Succesfully edited quote!')
+  $('#user-message').html('You have succesfully changed a tasting!')
   $('#changewineform2').trigger('reset')
 }
 
 const onChangeWineFailure = function () {
-  $('#user-message').text('You have failed!')
+  $('#user-message').text('You have failed to change your tasting!!')
   $('#changewineform2').trigger('reset')
 }
 
 const onDeleteWineSuccess = function (responseData) {
-  $('.content').text('You have deleted this entry!')
+  $('.content').text('You have deleted this tasting!')
 }
 
 const onDeleteWineFailure = function () {
-  $('#user-message').text('You have failed!')
+  $('#user-message').text('You have failed to delete this tasting!')
 }
 
 const onFavoriteWineSuccess = function (responseData) {
@@ -112,7 +128,7 @@ const onFavoriteWineSuccess = function (responseData) {
 }
 
 const onFavoriteWineFailure = function () {
-  $('#user-message').text('You have failed!')
+  $('#user-message').text('You have failed to get your favorite wine!')
 }
 module.exports = {
   onSignUpSuccess,
