@@ -1,53 +1,54 @@
 const store = require('../store.js')
 const showWinesTemplate = require('../templates/wine-listing.handlebars')
+const events = require('./events.js')
 
 const onSignUpSuccess = function () {
-  $('h1').text('You have successfully signed up!')
+  $('#user-message').text('You have successfully signed up!')
 }
 
 const failure = function () {
-  $('h1').text('You have failed!')
+  $('#user-message').text('You have failed!')
 }
 
 const onSignInSuccess = function (responseData) {
   store.user = responseData.user
-  $('h1').text(`Welcome ${responseData.user.email}!`)
+  $('#user-message').text(`Welcome ${responseData.user.email}!`)
   console.log(store.user)
 }
 
 const onChangePasswordSuccess = function (responseData) {
-  $('h1').text('You have successfully changed your password!')
+  $('#user-message').text('You have successfully changed your password!')
 }
 
 const onSignOutSuccess = () => {
   store.user = null
-  console.log('You have signed out!')
+  $('#user-message').text('You have signed out!')
 }
 
 const onCreateWineSuccess = function (responseData) {
   store.wine = responseData.wine
-  const listOfWines = JSON.stringify(store.wine)
-  console.log(store.wine)
-  console.log(store.wine.id)
-  $('h1').text(listOfWines)
+  const listOfWines = store.wine.name
+  $('#user-message').text(listOfWines)
 }
 
 const onGetWinesSuccess = function (responseData) {
+  console.log(responseData.wines)
   const showWinesHtml = showWinesTemplate({ wines: responseData.wines })
-  $('.content').append(showWinesHtml)
+  $('#user-message').html(showWinesHtml)
 }
 
 const onGetWineSuccess = function (responseData) {
-  $('content').text(${wine.name})
+  const showWinesHtml = showWinesTemplate({ wines: responseData.wine })
+  $('#user-message').html(showWinesHtml)
 }
 
 const onChangeWineSuccess = function (responseData) {
-  const listOfWines = JSON.stringify(responseData)
-  $('h1').text(listOfWines)
+  $(`.modal-backdrop`).remove()
+  $('#user-message').html('Succesfully edited quote!')
 }
 
 const onDeleteWineSuccess = function (responseData) {
-  $('h1').text('You have deleted this entry!')
+  $('.content').text('You have deleted this entry!')
 }
 
 const onFavoriteWineSuccess = function (responseData) {
@@ -64,7 +65,7 @@ const onFavoriteWineSuccess = function (responseData) {
       return largestNumber
     }
   })
-  $('content').text(`Your favorite wine is ${result.name}`)
+  $('#user-message').text(`Your favorite wine is ${result.name}`)
 }
 module.exports = {
   onSignUpSuccess,

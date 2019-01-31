@@ -58,9 +58,7 @@ const onGetWines = (event) => {
 
 const onGetWine = (event) => {
   event.preventDefault()
-  const dataid = getFormFields(event.target.dataid)
-  console.log(dataid)
-  // console.log(formData)
+  const dataid = getFormFields(event.target).id
   api.getWine(dataid)
     .then(ui.onGetWineSuccess)
     .catch(ui.failure)
@@ -82,7 +80,7 @@ const onDeleteWine = (event) => {
   event.preventDefault()
   const dataid = $(event.target).closest('section').data('id')
   api.deleteWine(dataid)
-    .then(ui.onDeleteWineSuccess)
+    .then(() => onGetWines(event))
     .catch(ui.failure)
 }
 
@@ -101,10 +99,10 @@ const addHandlers = () => {
   $('#createwineform').on('submit', onCreateWine)
   $('#getwinesbutton').on('click', onGetWines)
   $('#getwineform').on('submit', onGetWine)
-  $('body').on('submit', '#changewineform1', onChangeWine)
   $('#deletewinebutton').on('click', onDeleteWine)
   $('#favoritewinebutton').on('click', onFavoriteWine)
   $('body').on('click', '.delete-button', onDeleteWine)
+  $('body').on('submit', '.changewineform2', onChangeWine)
 }
 
 module.exports = {
