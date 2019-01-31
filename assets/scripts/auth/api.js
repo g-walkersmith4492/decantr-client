@@ -70,9 +70,9 @@ const getWine = (formData) => {
   })
 }
 
-const changeWine = (formData) => {
+const changeWine = (dataid, formData) => {
   return $.ajax({
-    url: config.apiUrl + '/wines/' + store.wineId,
+    url: config.apiUrl + '/wines/' + dataid,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -81,9 +81,9 @@ const changeWine = (formData) => {
   })
 }
 
-const deleteWine = () => {
+const deleteWine = (dataid) => {
   return $.ajax({
-    url: config.apiUrl + '/wines/' + store.wineId,
+    url: config.apiUrl + '/wines/' + dataid,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

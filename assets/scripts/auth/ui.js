@@ -1,4 +1,5 @@
 const store = require('../store.js')
+const showWinesTemplate = require('../templates/wine-listing.handlebars')
 
 const onSignUpSuccess = function () {
   $('h1').text('You have successfully signed up!')
@@ -32,8 +33,8 @@ const onCreateWineSuccess = function (responseData) {
 }
 
 const onGetWinesSuccess = function (responseData) {
-  const listOfWines = JSON.stringify(responseData)
-  $('h1').text(listOfWines)
+  const showWinesHtml = showWinesTemplate({ wines: responseData.wines })
+  $('.content').append(showWinesHtml)
 }
 
 const onGetWineSuccess = function (responseData) {

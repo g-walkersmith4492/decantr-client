@@ -1,0 +1,16 @@
+{{#each wines as |wine|}}
+  {{log wine}}
+  <!-- {{> partial}}
+  Don't uncomment yet -->
+
+    <section class ="wine-info" data-id="{{wine.id}}">
+    <h1> <small>Title: {{wine.title}}</small></h1>
+    {{#if wine.name}}
+      {{wine.name}}
+    {{else}}
+      No author provided.
+    {{/if}}
+    <button class= "delete-button" data-id="{{wine.id}}">Remove</button>
+  </section>
+
+{{/each}}
