@@ -17,15 +17,15 @@
     <!-- Button trigger modal -->
     <section class="wine-info" data-id="{{wine.id}}">
     <button type="button editwine-button" class="btn btn-primary changewinebutton" data-toggle="modal" data-target="#modal-{{wine.id}}">
-      Edit Wine
+      Edit Tasting
     </button>
 
     <!-- Modal -->
-    <div data-backdrop="true" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="changeWineModalCenterTitle1" aria-hidden="true" id="modal-{{wine.id}}">
+    <div data-backdrop="true" class="modal fade changewinehandlebars" tabindex="-1" role="dialog" aria-labelledby="changeWineModalCenterTitle1" aria-hidden="true" id="modal-{{wine.id}}">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
+            <h5 class="modal-title">Change this Tasting</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

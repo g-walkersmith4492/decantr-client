@@ -6,7 +6,6 @@ const onSignUp = function (event) {
   console.log('Nice click!')
   event.preventDefault()
   const formData = getFormFields(event.target)
-  console.log(formData)
   api.signUp(formData)
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
@@ -14,7 +13,6 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('Nice Click!')
   const formData = getFormFields(event.target)
   console.log(formData)
   api.signIn(formData)
@@ -24,7 +22,6 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('Nice Click!')
   const formData = getFormFields(event.target)
   console.log(formData)
   api.changePassword(formData)
@@ -41,7 +38,6 @@ const onSignOut = (event) => {
 
 const onCreateWine = function (event) {
   event.preventDefault()
-  console.log('Nice Click!')
   const formData = getFormFields(event.target)
   console.log(formData)
   api.createWine(formData)
@@ -66,7 +62,6 @@ const onGetWine = (event) => {
 
 const onChangeWine = function (event) {
   event.preventDefault()
-  console.log('Nice Click!')
   const dataid = $(event.target).closest('section').data('id')
   const formData = getFormFields(event.target)
   console.log(formData)
