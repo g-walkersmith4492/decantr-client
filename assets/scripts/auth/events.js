@@ -57,7 +57,7 @@ const onGetWine = (event) => {
   const dataid = getFormFields(event.target).id
   api.getWine(dataid)
     .then(ui.onGetWineSuccess)
-    .catch(ui.onGetWineSuccess)
+    .catch(ui.onGetWineFailure)
 }
 
 const onChangeWine = function (event) {

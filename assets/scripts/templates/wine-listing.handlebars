@@ -4,13 +4,16 @@
   Don't uncomment yet -->
 
     <section class ="main-info" data-id="{{wine.id}}">
-    <div class = "wine-info {{wine.id}}"
-    <h1> <small>Title: {{wine.title}}</small></h1>
-    {{#if wine.name}}
-      {{wine.name}}
-    {{else}}
-      No name provided.
-    {{/if}}
+    <div class = "wine-info {{wine.id}}">
+    <h1>Name: {{wine.name}}</h1>
+    <h1>Country: {{wine.country}}</h1>
+    <h1>Region: {{wine.region}}</h1>
+    <h1>Vintage: {{wine.vintage}}</h1>
+    <h1>Date: {{wine.date}}</h1>
+    <h1>ABV: {{wine.abv}}</h1>
+    <h1>Rating: {{wine.rating}}</h1>
+    <h1>Notes: {{wine.notes}}</h1>
+    <h1>Tasting ID: {{wine.id}}</h1>
     <div data-id="{{wine.id}}"
   </div>
     <button class= "delete-button" data-id="{{wine.id}}">Remove</button>

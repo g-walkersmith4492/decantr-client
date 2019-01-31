@@ -47,6 +47,7 @@ const onSignOutSuccess = () => {
   store.user = null
   $('#user-message').text('You have signed out!')
   $('.button-secret').hide()
+  $('.button-auth').show()
 }
 
 const onSignOutFailure = function () {
@@ -56,6 +57,18 @@ const onSignOutFailure = function () {
 const onCreateWineSuccess = function (responseData) {
   store.wine = responseData.wine
   const listOfWines = store.wine.name
+  $('#user-message').html(`Wine Name: ${store.wine.name}<br>
+    Tasted on: ${store.wine.date}<br>
+    Country: ${store.wine.country}<br>
+    Grape Type: ${store.wine.varietal}<br>
+    Region: ${store.wine.region}<br>
+    Vintage: ${store.wine.vintage}<br>
+    ABV: ${store.wine.abv}<br>
+    Rating: ${store.wine.rating}<br>
+    Notes: ${store.wine.notes}<br>
+    Tasting ID: ${store.wine.id}
+
+      `)
   $('#user-message').text(listOfWines)
   $('#createwineform').trigger('reset')
   $('#createWineModalCenter').modal('toggle')
@@ -80,8 +93,17 @@ const onGetWinesFailure = function () {
 }
 
 const onGetWineSuccess = function (responseData) {
-  const showWinesHtml = showWinesTemplate({ wines: responseData.wine })
-  $('#user-message').html(showWinesHtml)
+  $('#user-message').html(`Wine Name: ${responseData.wine.name}<br>
+    Tasted on: ${responseData.wine.date}<br>
+    Country: ${responseData.wine.country}<br>
+    Grape Type: ${responseData.wine.varietal}<br>
+    Region: ${responseData.wine.region}<br>
+    Vintage: ${responseData.wine.vintage}<br>
+    ABV: ${responseData.wine.abv}<br>
+    Rating: ${responseData.wine.rating}<br>
+    Notes: ${responseData.wine.notes}<br>
+    Tasting ID: ${responseData.wine.id}
+      `)
   $('#getwineform').trigger('reset')
   $('#getWineModalCenter').modal('toggle')
 }
@@ -136,7 +158,6 @@ const onFavoriteWineSuccess = function (responseData) {
     Rating: ${result.region}<br>
     Notes: ${result.region}<br>
     Tasting ID: ${result.id}
-
       `)
 }
 
