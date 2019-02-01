@@ -1,6 +1,20 @@
 const store = require('../store.js')
 const showWinesTemplate = require('../templates/wine-listing.handlebars')
 
+// $('.wine-bottle').hover(
+//   function () {
+//     $('.decantr-title').css('color', 'gold')
+//   })
+
+$('.wine-bottle').hover(
+  function () {
+    $('.decantr-title').toggleClass('.decantr-title decantr-titleyellow')
+  },
+  function () {
+    $('.wine-bottle').toggleClass('.decantr-title decantr-titleyellow')
+  }
+)
+
 $('.button-secret').hide()
 
 const onSignUpSuccess = function () {

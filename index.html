@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>decantr</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
+      <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
     </head>
     <body>
-      <h1>DECANTR</h1>
-
+      <div class="header">
+        <img class ="wine-bottle" src= '/public/wine-bottle-logo.png' alt="wine bottle">
+        <h1 class="decantr-title">decantr.</h1>
+      </div>
+      <nav>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary button-auth" data-toggle="modal" data-target="#exampleModalCenter">
   Sign Up
@@ -144,7 +149,7 @@
 </div>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary button-secret" data-toggle="modal" data-target="#createWineModalCenter">
-  Create a Tasting
+  Create Tasting
 </button>
 
 <!-- Modal -->
@@ -226,8 +231,8 @@
 </div>
 </div>
 </div>
-<button class="signoutbutton button-secret">Sign Out</button>
-<button id="getwinesbutton" class="button-secret">View Your Tastings</button>
+<button class="signoutbutton btn btn primary button-secret">Sign Out</button>
+<button id="getwinesbutton" class="button-secret btn btn primary">View Tastings</button>
 <button type="button" class="btn btn-primary button-secret" data-toggle="modal" data-target="#getWineModalCenter">
   Get Wine
 </button>
@@ -348,7 +353,8 @@
 </div>
 </div>
 </div>  -->
-<button id="favoritewinebutton" class="button-secret">What is your favorite wine?</button>
+<button id="favoritewinebutton" class="btn btn primary button-secret">Favorite Wine?</button>
+</nav>
 <div id="user-message"></div>
 </body>
 </html>
