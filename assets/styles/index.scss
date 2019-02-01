@@ -2,14 +2,24 @@
 
 
 body {
-  background-image: url('public/decantr-background-photo.jpg')
+  background-image: url('public/decantr-background-photo.jpg');
+  background-attachment: fixed;
 }
+
 .main-info {
-  border: 1px black solid;
-  margin: 5px;
-  padding: 5px;
-  height: 300px;
+  margin: 150px;
+  border: 1px solid black;
+  padding: 50px;
+  color: white;
+  background-color: rgba(142, 68, 173, .5);
+  font-size: 24px;
 }
+//
+// .editWineListButtons {
+//   float: left;
+// }
+
+
 
 .decantr-title {
   font-family: 'Lobster', cursive;
@@ -79,7 +89,7 @@ button {
   padding: 5px !important;
   margin: 5px !important;
   height: 40px !important;
-  width: 140px !important;
+  width: 100px !important;
   font-size: 12px !important;
   float: right;
 }
@@ -102,13 +112,13 @@ button {
 
 .signoutbutton {
   font-weight: 400px;
+  font-size: 12px;
 }
 
 .signoutbutton:hover {
   background-color: white;
   color: #862874;
   font-weight: 400px;
-  font-size: 18px
 }
 
 #changepasswordbutton:hover {
@@ -121,15 +131,6 @@ button {
   color: #862874 !important;
 }
 
-// .signoutbutton:hover {
-//   float: left;
-//   color: #862874 !important;
-//   background-color: white !important;
-// }
-// btn {
-//   vertical-align: middle !important;
-// }
-
 button:hover {
   background-color: #862874 !important;
   color: white !important;
@@ -137,10 +138,14 @@ button:hover {
 
 
 .header {
-  text-align: center;
   height: 100px;
 }
 
+.close {
+  width: 50px !important;
+  background-color: #862874 !important;
+  color: white !important;
+}
 
 .wine-bottle {
   height: 100px;
@@ -155,7 +160,7 @@ button:hover {
           transform: rotate(100deg);
   }
 
-.second-title{
+.second-title {
   text-align: center;
   font-family: 'Lobster', cursive;
   font-size: 48px;
@@ -172,7 +177,7 @@ button:hover {
   color: #862874;
 }
 
-#user-message-failure{
+#user-message-failure {
   font-size: 24px;
   font-weight: 800px;
   letter-spacing: 3px;
@@ -181,7 +186,7 @@ button:hover {
   color: red;
 }
 
-#user-message-ID{
+#user-message-ID {
   font-size: 24px;
   font-weight: 800px;
   letter-spacing: 3px;
@@ -190,26 +195,6 @@ button:hover {
   color: black;
 }
 
-.carousel-images {
-height: 400px;
-width: auto;
-border: 2px solid black;
-
-}
-
-.page2 {
-background-image: url("public/decantr-main-page.jpg")
-}
-
-.page2content {
-  display: flex;
-  justify-content: center;
-}
 #main-content-area {
   margin-top: 20px;
-}
-
-.decanter-photo {
-  height: 400px;
-  margin: 50px;
 }

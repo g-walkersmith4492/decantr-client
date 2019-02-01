@@ -138,6 +138,7 @@ const onGetWinesSuccess = function (responseData) {
   $('#user-message-ID').html('')
   console.log(responseData.wines)
   const showWinesHtml = showWinesTemplate({ wines: responseData.wines })
+  console.log(showWinesHtml)
   if (responseData.wines.length === 0) {
     $('#user-message-failure').html('Please Create a Tasting!')
   } else {

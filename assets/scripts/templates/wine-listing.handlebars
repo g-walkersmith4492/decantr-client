@@ -6,14 +6,14 @@
     <section class ="main-info" data-id="{{wine.id}}">
     <div class = "wine-info {{wine.id}}">
     <h1>Tasting Number: {{wine.id}}</h1>
-    Name: {{wine.name}}<br>
-    Country: {{wine.country}}<br>
-    Region: {{wine.region}}<br>
+    Name: {{limit wine.name 1000}}<br>
+    Country: {{limit wine.country 1000}}<br>
+    Region: {{limit wine.region 1000}}<br>
     Vintage: {{wine.vintage}}<br>
     Date: {{wine.date}}<br>
     ABV: {{wine.abv}}<br>
     Rating: {{wine.rating}}<br>
-    Notes: {{wine.notes}}<br>
+    Notes: {{limit wine.notes 1000}}<br>
     <div data-id="{{wine.id}}">
   <!-- </div> -->
     <button class= "delete-button" data-id="{{wine.id}}">Remove</button>
@@ -22,6 +22,7 @@
     <button type="button editwine-button" class="btn btn-primary changewinebutton" data-toggle="modal" data-target="#modal-{{wine.id}}">
       Edit Tasting
     </button>
+  </section>
 
     <!-- Modal -->
     <div data-backdrop="true" class="modal fade changewinehandlebars3" tabindex="-1" role="dialog" aria-labelledby="changeWineModalCenterTitle1" aria-hidden="true" id="modal-{{wine.id}}">
