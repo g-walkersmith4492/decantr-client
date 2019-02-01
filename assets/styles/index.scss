@@ -1,5 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
 
+
+body {
+  background-image: url('public/decantr-background-photo.jpg')
+}
 .main-info {
   border: 1px black solid;
   margin: 5px;
@@ -76,15 +80,9 @@ button {
   margin: 5px !important;
   height: 40px !important;
   width: 140px !important;
-  font-size: 16px !important;
+  font-size: 12px !important;
   float: right;
 }
-
-// .signoutbutton {
-//   float: right;
-//   background-color: #862874 !important;
-//   color: white !important;
-// }
 
 #dropdownMenuButton {
   color: black !important;
@@ -200,10 +198,18 @@ border: 2px solid black;
 }
 
 .page2 {
-  font-size: 18px;
-  font-weight: 600px;
+background-image: url("public/decantr-main-page.jpg")
 }
 
+.page2content {
+  display: flex;
+  justify-content: center;
+}
 #main-content-area {
   margin-top: 20px;
+}
+
+.decanter-photo {
+  height: 400px;
+  margin: 50px;
 }
