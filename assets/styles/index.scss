@@ -60,7 +60,8 @@ nav{
   text-align: center;
   height: 60px;
   width: 100%;
-  border: 2px solid purple;
+  border-top: 2px solid purple;
+  border-bottom: 2px solid purple;
   margin: 2px;
 }
 button {
@@ -117,3 +118,23 @@ button:hover {
   -webkit-transform: rotate(100deg);
           transform: rotate(100deg);
   }
+
+.second-title{
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 48px;
+  letter-spacing: 3px;
+  margin: 30px;
+}
+
+.carousel-images {
+height: 400px;
+width: auto;
+border: 2px solid black;
+
+}
+
+
+#main-content-area {
+  margin-top: 20px;
+}

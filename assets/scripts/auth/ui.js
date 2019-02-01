@@ -16,6 +16,7 @@ $('.wine-bottle').hover(
 )
 
 $('.button-secret').hide()
+$('.page2').hide()
 
 const onSignUpSuccess = function () {
   $('#user-message').text('You have successfully signed up!')
@@ -37,6 +38,9 @@ const onSignInSuccess = function (responseData) {
   $('.button-secret').show()
   $('.button-auth').hide()
   $('#signUpModalCenter').modal('toggle')
+  $('.page1').hide()
+  $('.page2').show()
+  $('#dropdownMenuButton').html(responseData.user.email)
 }
 
 const onSignInFailure = function () {
@@ -62,6 +66,8 @@ const onSignOutSuccess = () => {
   $('#user-message').text('You have signed out!')
   $('.button-secret').hide()
   $('.button-auth').show()
+  $('.page1').show()
+  $('.page2').show()
 }
 
 const onSignOutFailure = function () {
@@ -71,7 +77,7 @@ const onSignOutFailure = function () {
 const onCreateWineSuccess = function (responseData) {
   store.wine = responseData.wine
   const listOfWines = store.wine.name
-  $('#user-message').html(`Wine Name: ${store.wine.name}<br>
+  $('.page2content').html(`Wine Name: ${store.wine.name}<br>
     Tasted on: ${store.wine.date}<br>
     Country: ${store.wine.country}<br>
     Grape Type: ${store.wine.varietal}<br>
@@ -99,7 +105,11 @@ const onCreateWineFailure = function () {
 const onGetWinesSuccess = function (responseData) {
   console.log(responseData.wines)
   const showWinesHtml = showWinesTemplate({ wines: responseData.wines })
-  $('#user-message').html(showWinesHtml)
+  if (responseData.wines) {
+    $('.page2content').html(showWinesHtml)
+  } else {
+    $('#user-message').html('Please Create a Tasting!')
+  }
 }
 
 const onGetWinesFailure = function () {
@@ -107,7 +117,8 @@ const onGetWinesFailure = function () {
 }
 
 const onGetWineSuccess = function (responseData) {
-  $('#user-message').html(`Wine Name: ${responseData.wine.name}<br>
+  $('#user-message').text(`Tasting ID: ${responseData.wine.id}`)
+  $('.page2content').html(`Wine Name: ${responseData.wine.name}<br>
     Tasted on: ${responseData.wine.date}<br>
     Country: ${responseData.wine.country}<br>
     Grape Type: ${responseData.wine.varietal}<br>
@@ -140,9 +151,9 @@ const onChangeWineFailure = function () {
   $('.changewinehandlebars').modal('toggle')
 }
 
-const onDeleteWineSuccess = function (responseData) {
-  $('.content').text('You have deleted this tasting!')
-}
+// const onDeleteWineSuccess = function (responseData) {
+//   $('.content').text('You have deleted this tasting!')
+// }
 
 const onDeleteWineFailure = function () {
   $('#user-message').text('You have failed to delete this tasting!')
@@ -162,7 +173,7 @@ const onFavoriteWineSuccess = function (responseData) {
       return largestNumber
     }
   })
-  $('#user-message').html(`Wine Name: ${result.name}<br>
+  $('.page2content').html(`Wine Name: ${result.name}<br>
     Tasted on: ${result.date}<br>
     Country: ${result.country}<br>
     Grape Type: ${result.varietal}<br>
@@ -187,7 +198,6 @@ module.exports = {
   onGetWinesSuccess,
   onGetWineSuccess,
   onChangeWineSuccess,
-  onDeleteWineSuccess,
   onFavoriteWineSuccess,
   onSignInFailure,
   onSignUpFailure,
