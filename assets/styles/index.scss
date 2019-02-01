@@ -4,6 +4,7 @@
   border: 1px black solid;
   margin: 5px;
   padding: 5px;
+  height: 300px;
 }
 
 .decantr-title {
@@ -79,20 +80,57 @@ button {
   float: right;
 }
 
-.signoutbutton {
+// .signoutbutton {
+//   float: right;
+//   background-color: #862874 !important;
+//   color: white !important;
+// }
+
+#dropdownMenuButton {
+  color: black !important;
   float: left;
-  background-color: #862874 !important;
+}
+
+#dropdownMenuButton:hover {
   color: white !important;
 }
 
-.signoutbutton:hover {
-  float: left;
-  color: #862874 !important;
+#changepasswordbutton {
   background-color: white !important;
+  color: black !important;
+  border: 1px white solid !important;
+  font-weight: 400px;
 }
-btn {
-  vertical-align: middle !important;
+
+.signoutbutton {
+  font-weight: 400px;
 }
+
+.signoutbutton:hover {
+  background-color: white;
+  color: #862874;
+  font-weight: 400px;
+  font-size: 18px
+}
+
+#changepasswordbutton:hover {
+  color: white !important;
+  width: 100%;
+  border-radius: 0px !important;
+  font-weight: 400px;
+  border: 1px white solid !important;
+  background-color: white !important;
+  color: #862874 !important;
+}
+
+// .signoutbutton:hover {
+//   float: left;
+//   color: #862874 !important;
+//   background-color: white !important;
+// }
+// btn {
+//   vertical-align: middle !important;
+// }
 
 button:hover {
   background-color: #862874 !important;
@@ -127,6 +165,33 @@ button:hover {
   margin: 30px;
 }
 
+#user-message-success{
+  font-size: 24px;
+  font-weight: 800px;
+  letter-spacing: 3px;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  color: #862874;
+}
+
+#user-message-failure{
+  font-size: 24px;
+  font-weight: 800px;
+  letter-spacing: 3px;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  color: red;
+}
+
+#user-message-ID{
+  font-size: 24px;
+  font-weight: 800px;
+  letter-spacing: 3px;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  color: black;
+}
+
 .carousel-images {
 height: 400px;
 width: auto;
@@ -134,6 +199,10 @@ border: 2px solid black;
 
 }
 
+.page2 {
+  font-size: 18px;
+  font-weight: 600px;
+}
 
 #main-content-area {
   margin-top: 20px;

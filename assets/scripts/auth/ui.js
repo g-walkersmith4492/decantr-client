@@ -19,64 +19,94 @@ $('.button-secret').hide()
 $('.page2').hide()
 
 const onSignUpSuccess = function () {
-  $('#user-message').text('You have successfully signed up!')
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('#user-message').html('')
+  $('#user-message-success').text('You have successfully signed up!')
   $('#signupform').trigger('reset')
-  $('#exampleModalCenter').modal('toggle')
+  $('#exampleModalCenter').modal('hide')
 }
 
 const onSignUpFailure = function () {
-  $('#user-message').text('You have failed to sign up!')
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('#user-message-failure').text('You have failed to sign up!')
   $('#signupform').trigger('reset')
-  $('#exampleModalCenter').modal('toggle')
+  $('#exampleModalCenter').modal('hide')
 }
 
 const onSignInSuccess = function (responseData) {
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
   store.user = responseData.user
-  $('#user-message').text(`Welcome ${responseData.user.email}!`)
+  $('#user-message-success').text(`Welcome ${responseData.user.email}!`)
   console.log(store.user)
   $('#signinform').trigger('reset')
   $('.button-secret').show()
   $('.button-auth').hide()
-  $('#signUpModalCenter').modal('toggle')
+  $('#signUpModalCenter').modal('hide')
+  $('.page1').hide()
   $('.page1').hide()
   $('.page2').show()
   $('#dropdownMenuButton').html(responseData.user.email)
 }
 
 const onSignInFailure = function () {
-  $('#user-message').text('You have failed to sign in!')
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('#user-message-failure').text('You have failed to sign in!')
   $('#signinform').trigger('reset')
-  $('#signUpModalCenter').modal('toggle')
+  $('#signUpModalCenter').modal('hide')
 }
 
 const onChangePasswordSuccess = function (responseData) {
-  $('#user-message').text('You have successfully changed your password!')
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('#user-message-success').text('You have successfully changed your password!')
   $('#changepasswordform').trigger('reset')
-  $('#changePasswordModalCenter').modal('toggle')
+  $('#changePasswordModalCenter').modal('hide')
 }
 
 const onChangePasswordFailure = function () {
-  $('#user-message').text('You have failed to change your password!')
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('#user-message-failure').text('You have failed to change your password!')
   $('#changepasswordform').trigger('reset')
-  $('#changePasswordModalCenter').modal('toggle')
+  $('#changePasswordModalCenter').modal('hide')
 }
 
 const onSignOutSuccess = () => {
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
   store.user = null
-  $('#user-message').text('You have signed out!')
+  $('#user-message-success').text('You have signed out!')
   $('.button-secret').hide()
   $('.button-auth').show()
   $('.page1').show()
   $('.page2').show()
+  $('.page2content').html('')
 }
 
 const onSignOutFailure = function () {
-  $('#user-message').text('You have failed to sign out!')
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('#user-message-failure').text('You have failed to sign out!')
 }
 
 const onCreateWineSuccess = function (responseData) {
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('#user-message-ID').html(`Tasting ID: ${responseData.wine.id}`)
   store.wine = responseData.wine
-  const listOfWines = store.wine.name
   $('.page2content').html(`Wine Name: ${store.wine.name}<br>
     Tasted on: ${store.wine.date}<br>
     Country: ${store.wine.country}<br>
@@ -86,38 +116,47 @@ const onCreateWineSuccess = function (responseData) {
     ABV: ${store.wine.abv}<br>
     Rating: ${store.wine.rating}<br>
     Notes: ${store.wine.notes}<br>
-    Tasting ID: ${store.wine.id}
-
       `)
-  $('#user-message').text(listOfWines)
   $('#createwineform').trigger('reset')
-  $('#createWineModalCenter').modal('toggle')
+  $('#createWineModalCenter').modal('hide')
 }
 
 const onCreateWineFailure = function () {
-  $('#user-message').text('You have failed to create a tasting!')
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('#user-message-failure').text('You have failed to create a tasting!')
   $('#signupform').trigger('')
   $('#createwineform').trigger('reset')
-  $('#createWineModalCenter').modal('toggle')
-  $('.createWineModalCenter').modal('toggle')
+  $('#createWineModalCenter').modal('hide')
+  $('.createWineModalCenter').modal('hide')
 }
 
 const onGetWinesSuccess = function (responseData) {
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
   console.log(responseData.wines)
   const showWinesHtml = showWinesTemplate({ wines: responseData.wines })
-  if (responseData.wines) {
-    $('.page2content').html(showWinesHtml)
+  if (responseData.wines.length === 0) {
+    $('#user-message-failure').html('Please Create a Tasting!')
   } else {
-    $('#user-message').html('Please Create a Tasting!')
+    $('.page2content').html(showWinesHtml)
   }
 }
 
 const onGetWinesFailure = function () {
-  $('#user-message').text('You have failed to get your tastings!')
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('#user-message-failure').text('You have failed to get your tastings!')
 }
 
 const onGetWineSuccess = function (responseData) {
-  $('#user-message').text(`Tasting ID: ${responseData.wine.id}`)
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('#user-message-ID').text(`Tasting ID: ${responseData.wine.id}`)
   $('.page2content').html(`Wine Name: ${responseData.wine.name}<br>
     Tasted on: ${responseData.wine.date}<br>
     Country: ${responseData.wine.country}<br>
@@ -127,39 +166,60 @@ const onGetWineSuccess = function (responseData) {
     ABV: ${responseData.wine.abv}<br>
     Rating: ${responseData.wine.rating}<br>
     Notes: ${responseData.wine.notes}<br>
-    Tasting ID: ${responseData.wine.id}
       `)
   $('#getwineform').trigger('reset')
-  $('#getWineModalCenter').modal('toggle')
+  $('#getWineModalCenter').modal('hide')
 }
 const onGetWineFailure = function () {
-  $('#user-message').text('You have failed to get your tasting!')
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('#user-message-failure').text('Could Not Retrieve Tasting!')
   $('#getwineform').trigger('reset')
-  $('#getWineModalCenter').modal('toggle')
+  $('#getWineModalCenter').modal('hide')
 }
 
 const onChangeWineSuccess = function (responseData) {
-  $(`.modal-backdrop`).remove()
-  $('#user-message').html('You have succesfully changed a tasting!')
-  $('#changewineform2').trigger('reset')
-  $('.changewinehandlebars').modal('toggle')
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('.modal-backdrop').remove()
+  $('#user-message-ID').html(`Tasting ID: ${responseData.wine.id}`)
+  $('.page2content').html(`Wine Name: ${responseData.wine.name}<br>
+    Tasted on: ${responseData.wine.date}<br>
+    Country: ${responseData.wine.country}<br>
+    Grape Type: ${responseData.wine.varietal}<br>
+    Region: ${responseData.wine.region}<br>
+    Vintage: ${responseData.wine.vintage}<br>
+    ABV: ${responseData.wine.abv}<br>
+    Rating: ${responseData.wine.rating}<br>
+    Notes: ${responseData.wine.notes}
+      `)
+  $('.changewineform2').trigger('reset')
+  $('.changewinehandlebars3').modal('hide')
 }
 
 const onChangeWineFailure = function () {
-  $('#user-message').text('You have failed to change your tasting!!')
-  $('#changewineform2').trigger('reset')
-  $('.changewinehandlebars').modal('toggle')
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('.modal-backdrop').remove()
+  $('#user-message-failure').text('You have failed to change your tasting!!')
+  $('.changewineform2').trigger('reset')
+  $('.changewinehandlebars3').modal('hide')
 }
 
-// const onDeleteWineSuccess = function (responseData) {
-//   $('.content').text('You have deleted this tasting!')
-// }
-
-const onDeleteWineFailure = function () {
-  $('#user-message').text('You have failed to delete this tasting!')
+const onDeleteWineFailure = function (responseData) {
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('#user-message-failure').text('You have failed to delete this tasting!')
 }
 
 const onFavoriteWineSuccess = function (responseData) {
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
   const favoriteWine = responseData.wines
 
   const result = favoriteWine.reduce(function (previousnum, currentnum) {
@@ -173,21 +233,24 @@ const onFavoriteWineSuccess = function (responseData) {
       return largestNumber
     }
   })
+  $('#user-message-ID').html(`Tasting ID: ${result.id}`)
   $('.page2content').html(`Wine Name: ${result.name}<br>
     Tasted on: ${result.date}<br>
     Country: ${result.country}<br>
     Grape Type: ${result.varietal}<br>
     Region: ${result.region}<br>
-    Vintage: ${result.region}<br>
-    ABV: ${result.region}<br>
-    Rating: ${result.region}<br>
-    Notes: ${result.region}<br>
-    Tasting ID: ${result.id}
+    Vintage: ${result.vintage}<br>
+    ABV: ${result.abv}<br>
+    Rating: ${result.rating}<br>
+    Notes: ${result.notes}<br>
       `)
 }
 
 const onFavoriteWineFailure = function () {
-  $('#user-message').text('You have failed to get your favorite wine!')
+  $('#user-message-success').html('')
+  $('#user-message-failure').html('')
+  $('#user-message-ID').html('')
+  $('#user-message-failure').text('You do not have a favorite wine!')
 }
 module.exports = {
   onSignUpSuccess,
@@ -207,6 +270,6 @@ module.exports = {
   onGetWinesFailure,
   onGetWineFailure,
   onChangeWineFailure,
-  onDeleteWineFailure,
-  onFavoriteWineFailure
+  onFavoriteWineFailure,
+  onDeleteWineFailure
 }

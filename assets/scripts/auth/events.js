@@ -101,6 +101,9 @@ const addHandlers = () => {
   $('.modal').on('hidden.bs.modal', function () {
     $(this).find('form').trigger('reset')
   })
+  $('body').on('hidden.bs.modal', '.modal', function () {
+    $(this).find('form').trigger('reset')
+  })
 }
 
 module.exports = {
