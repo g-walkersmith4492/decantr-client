@@ -43,7 +43,6 @@ const onSignInSuccess = function (responseData) {
   $('#user-message-ID').html('')
   store.user = responseData.user
   $('#user-message-success').text(`Welcome ${responseData.user.email}!`)
-  console.log(store.user)
   $('#signinform').trigger('reset')
   $('.button-secret').show()
   $('.button-auth').hide()
@@ -105,9 +104,9 @@ const onCreateWineSuccess = function (responseData) {
   $('#user-message-success').html('')
   $('#user-message-failure').html('')
   $('#user-message-ID').html('')
-  $('.page2content').show()
   $('#user-message-ID').html(`Tasting ID: ${responseData.wine.id}`)
   store.wine = responseData.wine
+  $('.page2content').show()
   $('.page2content').html(`Wine Name: ${store.wine.name}<br>
     Tasted on: ${store.wine.date}<br>
     Country: ${store.wine.country}<br>
@@ -119,6 +118,7 @@ const onCreateWineSuccess = function (responseData) {
     Notes: ${store.wine.notes}<br>
       `)
   $('#createwineform').trigger('reset')
+  $('.page2content').css('background-color', 'rgba(142, 68, 173, .5')
   $('#createWineModalCenter').modal('hide')
 }
 
@@ -140,9 +140,11 @@ const onGetWinesSuccess = function (responseData) {
   const showWinesHtml = showWinesTemplate({ wines: responseData.wines })
   if (responseData.wines.length === 0) {
     $('#user-message-failure').html('Please Create a Tasting!')
+    $('.page2content').hide()
   } else {
     $('#user-message-success').html('View Your Tastings Below!')
     $('.page2content').show()
+    $('.page2content').css('background-color', 'rgba(142, 68, 173, 0')
     $('.page2content').html(showWinesHtml)
   }
 }
@@ -171,6 +173,7 @@ const onGetWineSuccess = function (responseData) {
     Notes: ${responseData.wine.notes}<br>
       `)
   $('#getwineform').trigger('reset')
+  $('.page2content').css('background-color', 'rgba(142, 68, 173, .5')
   $('#getWineModalCenter').modal('hide')
 }
 const onGetWineFailure = function () {
@@ -207,6 +210,7 @@ const onDeleteWineFailure = function (responseData) {
   $('#user-message-failure').html('')
   $('#user-message-ID').html('')
   $('#user-message-failure').text('You have failed to delete this tasting!')
+  $('.page2content').hide()
 }
 
 const onFavoriteWineSuccess = function (responseData) {
@@ -226,24 +230,15 @@ const onFavoriteWineSuccess = function (responseData) {
       return largestNumber
     }
   })
-  $('.page2content').hide()
   $('#user-message-success').html(`Your Favorite Wine is: ${result.name}, a ${result.vintage} ${result.varietal} from ${result.country}.  You tasted this wine on ${result.country}`)
-  // $('.page2content').html(`Wine Name: ${result.name}<br>
-  //   Tasted on: ${result.date}<br>
-  //   Country: ${result.country}<br>
-  //   Grape Type: ${result.varietal}<br>
-  //   Region: ${result.region}<br>
-  //   Vintage: ${result.vintage}<br>
-  //   ABV: ${result.abv}<br>
-  //   Rating: ${result.rating}<br>
-  //   Notes: ${result.notes}<br>
-  //     `)
+  $('.page2content').hide()
 }
 
 const onFavoriteWineFailure = function () {
   $('#user-message-success').html('')
   $('#user-message-failure').html('')
   $('#user-message-ID').html('')
+  $('.page2content').hide()
   $('#user-message-failure').text('You do not have a favorite wine!')
 }
 module.exports = {

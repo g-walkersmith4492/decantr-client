@@ -19,7 +19,7 @@ body {
 }
 
 .main-info {
-  margin: 150px;
+  margin: 50px 150px 150px 150px;
   padding: 50px;
   color: white;
   background-image: url('public/wine-tastings-background.png');
@@ -35,10 +35,13 @@ body {
 }
 
 .page2content {
-  width: 100%;
-  float: left;
+  margin-top: 50px;
+  width: 50%;
+  text-align: center;
+  margin-bottom: 50px;
   font-size: 24px;
   color: black;
+  background-color: rgba(142, 68, 173, .5);
 }
 
 .winelistHeader {
