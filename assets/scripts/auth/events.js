@@ -3,7 +3,6 @@ const ui = require('./ui.js')
 const api = require('./api.js')
 
 const onSignUp = function (event) {
-  console.log('Nice click!')
   event.preventDefault()
   const formData = getFormFields(event.target)
   api.signUp(formData)
@@ -14,7 +13,6 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  console.log(formData)
   api.signIn(formData)
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
@@ -23,7 +21,6 @@ const onSignIn = function (event) {
 const onChangePassword = function (event) {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  console.log(formData)
   api.changePassword(formData)
     .then(ui.onChangePasswordSuccess)
     .catch(ui.onChangePasswordFailure)
@@ -39,7 +36,6 @@ const onSignOut = (event) => {
 const onCreateWine = function (event) {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  console.log(formData)
   api.createWine(formData)
     .then(ui.onCreateWineSuccess)
     .catch(ui.onCreateWineFailure)
@@ -64,8 +60,6 @@ const onChangeWine = function (event) {
   event.preventDefault()
   const dataid = $(event.target).closest('section').data('id')
   const formData = getFormFields(event.target)
-  console.log(formData)
-  console.log(dataid)
   api.changeWine(dataid, formData)
     .then(ui.onChangeWineSuccess)
     .catch(ui.onChangeWineFailure)

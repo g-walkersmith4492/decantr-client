@@ -5,7 +5,8 @@
 
     <section class ="main-info" data-id="{{wine.id}}">
     <div class = "wine-info {{wine.id}}">
-    <h1>Tasting Number: {{wine.id}}</h1>
+    <br>
+    Tasting ID: {{wine.id}}</h1><br>
     Name: {{limit wine.name 1000}}<br>
     Country: {{limit wine.country 1000}}<br>
     Region: {{limit wine.region 1000}}<br>
@@ -13,7 +14,7 @@
     Date: {{wine.date}}<br>
     ABV: {{wine.abv}}<br>
     Rating: {{wine.rating}}<br>
-    Notes: {{limit wine.notes 1000}}<br>
+    <div class="winenotes">Notes: {{limit wine.notes 1000}}</span><br>
     <div data-id="{{wine.id}}">
   <!-- </div> -->
     <button class= "delete-button" data-id="{{wine.id}}">Remove</button>
@@ -39,55 +40,55 @@
           <!-- Row for name -->
         <div class="form-group row">
           <div class="col-sm-10">
-            <input type="text" class="form-control" name ="wine[name]" placeholder="name">
+            <input type="text" class="form-control" name ="wine[name]" placeholder="Wine Name/Vineyard">
           </div>
         </div>
         <!-- Row for varietal -->
         <div class="form-group row">
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="wine[varietal]" placeholder="varietal">
+            <input type="text" class="form-control" name="wine[varietal]" placeholder="Grape Variety">
           </div>
         </div>
         <!-- Row for country -->
         <div class="form-group row">
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="wine[country]" placeholder="country">
+            <input type="text" class="form-control" name="wine[country]" placeholder="Country">
           </div>
         </div>
         <!-- Row for region -->
         <div class="form-group row">
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="wine[region]"placeholder="region">
+            <input type="text" class="form-control" name="wine[region]"placeholder="Region">
           </div>
         </div>
         <!-- Row for vintage -->
         <div class="form-group row">
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="wine[vintage]" placeholder="vintage">
+            <input type="text" class="form-control" name="wine[vintage]" placeholder="Vintage (Year)">
           </div>
         </div>
         <!-- Row for date -->
         <div class="form-group row">
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="wine[date]" placeholder="date">
+            <input type="text" class="form-control" name="wine[date]" placeholder="Date Tasted">
           </div>
         </div>
         <!-- Row for abv -->
         <div class="form-group row">
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="wine[abv]" placeholder="abv">
+            <input type="text" class="form-control" name="wine[abv]" placeholder="Alcohol Percantage">
           </div>
         </div>
         <!-- Row for rating -->
         <div class="form-group row">
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="wine[rating]" placeholder="rating">
+            <input type="text" class="form-control" name="wine[rating]" placeholder="Rating">
           </div>
         </div>
         <!-- Row for notes -->
         <div class="form-group row">
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="wine[notes]" placeholder="notes">
+            <input type="text" class="form-control" name="wine[notes]" placeholder="Tasting Notes">
           </div>
         </div>
         <div class="form-group row">
