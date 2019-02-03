@@ -230,7 +230,7 @@ const onFavoriteWineSuccess = function (responseData) {
       return largestNumber
     }
   })
-  $('#user-message-success').html(`Your Favorite Wine is: ${result.name}, a ${result.vintage} ${result.varietal} from ${result.country}.  You tasted this wine on ${result.country}`)
+  $('#user-message-success').html(`Your Favorite Wine is: ${result.name}, a ${result.vintage} ${result.varietal} from ${result.country}.  You tasted this wine on ${result.date}`)
   $('.page2content').hide()
 }
 
