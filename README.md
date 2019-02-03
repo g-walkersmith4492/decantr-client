@@ -28,7 +28,7 @@ https://decantr.herokuapp.com
 https://g-walkersmith4492.github.io/decantr-client/
 
 
-## List of Technologies used during this project:
+## List of Technologies used during this project for front-end:
 
 - JavaScript
 - jQuery
