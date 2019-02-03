@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>decantr</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+    </head>
+    <body>
+      <div class="header">
+        <img class ="wine-bottle" src= 'public/wine-bottle-logo.png' alt="wine bottle">
+        <h1 class="decantr-title">decantr.</h1>
+      </div>
+      <nav>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary button-auth" data-toggle="modal" data-target="#exampleModalCenter">
+  Sign Up
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Sign Up Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="signupform">
+    <div class="form-group row">
+      <label for="exampleInputEmailSignUp" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" name ="credentials[email]" id="inputEmail" placeholder="email@example.com">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" name="credentials[password]" id="inputPassword" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">Confirm Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" name="credentials[password_confirmation]" id="confirmPassword" placeholder="Confirm Password">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" id="signupbutton" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary button-auth" data-toggle="modal" data-target="#signUpModalCenter">
+  Sign In
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="signUpModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signInModalCenterTitle">Sign In Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="signinform">
+    <div class="form-group row">
+      <label for="exampleInputEmailSignUp" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" name ="credentials[email]" id="inputEmail2" placeholder="email@example.com">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" name="credentials[password]" id="inputPassword2" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" id="signinbutton" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+<!-- Button trigger modal -->
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle button-secret" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item signoutbutton" href="#">Sign Out</a>
+    <button type="button" id="changepasswordbutton"class="btn btn-primary button-secret" data-toggle="modal" data-target="#changePasswordModalCenter">
+      Change Password
+    </button>
+  </div>
+</div>
+<!--
+div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle signoutbutton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    g.walkersmith4492@gmail.com
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item signoutbutton" href="#">Sign Out</a>
+    <<button type="button" class="btn btn-primary button-secret" data-toggle="modal" data-target="#changePasswordModalCenter">
+      Change Password
+    </button> -->
+  <!-- </div> -->
+
+<!-- <button type="button" class="btn btn-primary button-secret" data-toggle="modal" data-target="#changePasswordModalCenter">
+  Change Password
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="changePasswordModalCenter" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="changePasswordModalCenterTitle">Change Password Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="changepasswordform">
+    <div class="form-group row">
+      <label for="exampleInputEmailSignUp" class="col-sm-2 col-form-label">Old Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" name ="passwords[old]" id="inputEmail3" placeholder="Old Password">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">New Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" name="passwords[new]" id="inputPassword3" placeholder="New Password">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" id="changepasswordbutton" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary button-secret" data-toggle="modal" data-target="#createWineModalCenter">
+  Create Tasting
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="createWineModalCenter" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createWineModalCenterTitle">Create a Tasting</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="createwineform">
+      <!-- Row for name -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name ="wine[name]" id="inputName" placeholder="Wine Name / Vineyard">
+      </div>
+    </div>
+    <!-- Row for varietal -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[varietal]" id="inputVarietal" placeholder="Grape Variety">
+      </div>
+    </div>
+    <!-- Row for country -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[country]" id="inputCountry" placeholder="Country">
+      </div>
+    </div>
+    <!-- Row for region -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[region]" id="inputRegion" placeholder="Region">
+      </div>
+    </div>
+    <!-- Row for vintage -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[vintage]" id="inputVintage" placeholder="Vintage (year)">
+      </div>
+    </div>
+    <!-- Row for date -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[date]" id="inputDate" placeholder="Date Tasted (yyyy-mm-dd)">
+      </div>
+    </div>
+    <!-- Row for abv -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[abv]" id="inputABV" placeholder="Alcohol Percentage">
+      </div>
+    </div>
+    <!-- Row for rating -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[rating]" id="inputRating" placeholder="Rating">
+      </div>
+    </div>
+    <!-- Row for notes -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wine[notes]" id="inputNotes" placeholder="Tasting Notes">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" id="createwinebutton" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+<button id="getwinesbutton" class="button-secret btn btn primary">View All Tastings</button>
+<button type="button" class="btn btn-primary button-secret" data-toggle="modal" data-target="#getWineModalCenter">
+  View Tasting
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="getWineModalCenter" tabindex="-1" role="dialog" aria-labelledby="getWineModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="getWineModalCenterTitle">Tasting Attribute</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="getwineform">
+    <div class="form-group row">
+      <label for="examplegetWine" class="col-sm-2 col-form-label">Tasting ID</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name ="id" id="inputWine" placeholder="Wine ID">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" id="getwinebutton" class="btn btn-primary">Save changes</button>
+
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+<button id="favoritewinebutton" class="btn btn primary button-secret">Favorite Wine?</button>
+</nav>
+<div id="user-message-success"></div>
+<div id="user-message-failure"></div>
+<div id="user-message-ID"></div>
+<section class="page1">
+<h2 class="second-title">Discover Your Inner Sommelier</h2>
+<div id="main-content-area" class="container fluid">
+<div class="row">
+      </div>
+    </div>
+</div>
+</section>
+<section class="page2">
+  <div class ="page2content">
+  </div>
+</section>
+</body>
+</html>
