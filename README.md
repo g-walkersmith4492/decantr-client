@@ -39,7 +39,6 @@ https://g-walkersmith4492.github.io/decantr-client/
 - jQuery
 - ajax
 - API
-- Rails
 - Handlebars
 
 ## Wireframe and User Stories:
